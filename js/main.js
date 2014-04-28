@@ -14,7 +14,8 @@
       this.rainbow = document.getElementById('gradient-pattern');
       this.mask = document.getElementById('mask2');
       this.shape = document.getElementById('js-shape');
-      return this.scanImage = document.getElementById('js-scan-image');
+      this.scanImage = document.getElementById('js-scan-image');
+      return this.charger = document.getElementById('js-charger');
     };
 
     Main.prototype.animateRainbow = function() {
@@ -29,7 +30,7 @@
         onUpdate: function(e) {
           var attr;
           attr = "rotate(" + this.target.deg + ", 500, 500)";
-          return it.rainbow.setAttribute('transform', attr);
+          return it.rainbow.setAttribute('patternTransform', attr);
         }
       });
     };
@@ -49,16 +50,30 @@
       });
     };
 
+    Main.prototype.fillCharger = function() {
+      var it, tween;
+      it = this;
+      return tween = TweenMax.to({
+        p: 0
+      }, 2, {
+        p: 1,
+        onUpdate: function(e) {
+          return it.charger.setAttribute('fill', "rgba(255,255,255," + this.target.p + ")");
+        }
+      });
+    };
+
     Main.prototype.showIphone = function() {
-      var child, length, _i, _len, _ref, _results;
+      var child, i, it, length, _i, _len, _ref, _results;
+      it = this;
       _ref = this.shape.children;
       _results = [];
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        child = _ref[_i];
+      for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
+        child = _ref[i];
         length = typeof child.getTotalLength === "function" ? child.getTotalLength() : void 0;
         child.setAttribute('stroke-dasharray', length);
         child.setAttribute('stroke-dashoffset', length);
-        _results.push((function(child, length) {
+        _results.push((function(child, length, i) {
           return setTimeout(function() {
             var tween;
             return tween = TweenMax.to({
@@ -67,10 +82,15 @@
               p: 0,
               onUpdate: function() {
                 return child.setAttribute('stroke-dashoffset', this.target.p);
+              },
+              onComplete: function() {
+                if (i === it.shape.children.length - 1) {
+                  return it.fillCharger();
+                }
               }
             });
-          }, 1000);
-        })(child, length));
+          }, 500);
+        })(child, length, i));
       }
       return _results;
     };

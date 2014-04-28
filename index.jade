@@ -1,8 +1,8 @@
-!!!5
+doctype
 html
 	head
 		meta(charset='UTF-8')
-		title ios fun5
+		title gradient
 		link(rel="stylesheet", type="text/css", href="css/main.css")
 	body
 		include assets.svg
@@ -15,45 +15,8 @@ html
 					svg(width="1000", viewBox="0 0 1200 1200")
 						rect(id="rainbow", x="-500", y="-500", fill="url(#gradient-pattern)", width="2000", height="2000")
 
-		script(src="js/tween.min.js")
+		script(src="js/tweenmax.min.js")
 		script(src="js/main.js")
-
-		script
-			var Loading = new window.Loading({	
-				transition: 2000
-			});
-
-			i = -400;
-			setInterval(function(){
-				scan = document.getElementById('js-scan-image');
-				scan.setAttribute('y', i+=2);
-				(i == 900) && (i = -400)
-			}, 1000/80)
-
-			//- var run = function(){
-			//- 	Loading.setProgress(0)
-
-			//- 	setTimeout(function(){
-			//- 		Loading.setProgress(10);
-			//- 	}, 4000)
-
-			//- 	setTimeout(function(){
-			//- 		Loading.setProgress(20);
-			//- 	}, 6000)
-
-			//- 	setTimeout(function(){
-			//- 		Loading.setProgress(70);
-			//- 	}, 9000)
-
-			//- 	setTimeout(function(){
-			//- 		Loading.setProgress(100);
-			//- 	}, 12000)
-			//- }
-			
-			//- setInterval(run, 19000)
-			//- run();
-
-
 
 
 

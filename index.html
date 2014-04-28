@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>ios fun5</title>
+    <title>gradient</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body><svg id="svg" width="1000" height="1000" viewBox="0 0 1000 1000" style="margin-left:100%;position:absolute;">
@@ -31,7 +31,6 @@
         <stop offset="0%" stop-color="#ff00ff"/>   
         <stop offset="100%" stop-color="#ff0000"/>   
     </linearGradient>
-
     <pattern id="gradient-pattern" width="100" height="1000" patternUnits="userSpaceOnUse">
         <g id="js-gradient">
             <rect x="0" y="0" width="100" height="16.666666667%" fill="url(#redyel)" />
@@ -43,9 +42,7 @@
         </g>
     </pattern>
 
-
     <mask id="mask2">
-
         <circle fill="none" stroke-miterlimit="10" cx="500.403" cy="133.587" r="6.326"/>
         <path fill="none" stroke-miterlimit="10" d="M519.887,156.174h-14.352h-4.642h-14.351
         c-1.514,0-2.742,1.228-2.742,2.742s1.228,2.742,2.742,2.742h14.351h4.642h14.352c1.514,0,2.742-1.228,2.742-2.742
@@ -61,26 +58,18 @@
         h-2.765v-1.334c0-0.737-0.598-1.334-1.335-1.334h-49.593c-0.737,0-1.335,0.598-1.335,1.334v1.334H394.237
         c-27.23,0-49.305,22.075-49.305,49.306v0V191.741z"/>
         <circle fill="none" stroke-miterlimit="10" cx="471.111" cy="158.917" r="2.682"/>
-        
         <polygon  fill="white" stroke="0" points="507.668,812.916 507.668,798.529 493.169,798.529 493.169,812.916 491.919,812.916 491.919,839.999 
         495.919,839.999 495.919,855.978 497.898,855.978 497.898,987.748 497.898,1058.818 502.891,1058.818 502.891,987.748 
         502.896,987.748 502.896,855.978 504.877,855.978 504.877,839.999 508.918,839.999 508.918,812.916 "/>
-
         <lineargradient id="SVGID_1_" gradientunits="userSpaceOnUse" x1="188.5" y1="800" x2="188.5" y2="1000">
           <stop offset="0" style="stop-color: #000000; stop-opacity: 0;"></stop>
           <stop offset="1" style="stop-color: #000000;"></stop>
         </lineargradient>
         <rect stroke-width="0" x="420" y="800" fill="url(#SVGID_1_)" width="160" height="201"></rect>
-
         <image id="js-scan-image" xlink:href="mockups/shade.png" x="200" y="-500" height="600" width="600"></image>
-
     </mask>
   </defs>
 </svg>
-
-
-
-
 
     <svg viewBox="0 0 1000 1000">
       <g mask="url(#mask2)">
@@ -92,49 +81,7 @@
         </svg>
       </g>
     </svg>
-    <script src="js/tween.min.js"></script>
+    <script src="js/tweenmax.min.js"></script>
     <script src="js/main.js"></script>
-    <script>
-      var Loading = new window.Loading({	
-       transition: 2000
-      });
-      
-      i = -400;
-      setInterval(function(){
-       scan = document.getElementById('js-scan-image');
-       scan.setAttribute('y', i+=2);
-       (i == 900) && (i = -400)
-      }, 1000/80)
-      
-      //- var run = function(){
-      //- 	Loading.setProgress(0)
-      
-      //- 	setTimeout(function(){
-      //- 		Loading.setProgress(10);
-      //- 	}, 4000)
-      
-      //- 	setTimeout(function(){
-      //- 		Loading.setProgress(20);
-      //- 	}, 6000)
-      
-      //- 	setTimeout(function(){
-      //- 		Loading.setProgress(70);
-      //- 	}, 9000)
-      
-      //- 	setTimeout(function(){
-      //- 		Loading.setProgress(100);
-      //- 	}, 12000)
-      //- }
-      //- setInterval(run, 19000)
-      //- run();
-      
-      
-      
-      
-      
-      
-      
-      
-    </script>
   </body>
 </html>

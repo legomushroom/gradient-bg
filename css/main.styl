@@ -1,0 +1,44 @@
+@import 'assets/imports.styl'
+@import 'css-assets/normalize.styl'
+
+@import 'css-assets/general'
+@import 'css-assets/elements'
+@import 'css-assets/blocks'
+@import 'css-assets/layouts'
+@import 'css-assets/effects'
+@import 'css-assets/icons'
+
+
+#mask2
+	stroke #999
+	stroke #fff
+	stroke-width 2px
+
+	// image
+	// 	opacity .5
+
+rectSize = 20*gs
+
+.gradient
+	rect rectSize
+	position absolute
+	bottom  - 4*gs
+	left 50%
+	margin-left - (rectSize/2)
+	z-index 1
+	-webkit-transform rotate(180deg)
+	-moz-transform rotate(180deg)
+	-ms-transform rotate(180deg)
+	-o-transform rotate(180deg)
+	transform rotate(180deg)
+	// t -100%
+	background: -moz-linear-gradient(top,  rgba(0,0,0,1) 4%, rgba(0,0,0,1) 5%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(4%,rgba(0,0,0,1)), color-stop(5%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 4%,rgba(0,0,0,1) 5%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,1) 4%,rgba(0,0,0,1) 5%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,1) 4%,rgba(0,0,0,1) 5%,rgba(0,0,0,0) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,1) 4%,rgba(0,0,0,1) 5%,rgba(0,0,0,0) 100%); /* W3C */
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+
+

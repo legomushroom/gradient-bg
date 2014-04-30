@@ -18,13 +18,12 @@ class Main
     tween = TweenMax.to { deg: 0 }, 20,
       deg: 360
       repeat: -1
-      yoyo: true
+      # yoyo: true
       onUpdate: (e)->
         attr = "rotate(#{@target.deg}, 500, 500)"
         it.rainbow.setAttribute 'patternTransform', attr
 
   animateProgress:->
-    console.log @scanImage
     it = @
     i = -400
     tween = TweenMax.to { progress: -400 }, 10,
@@ -49,10 +48,12 @@ class Main
       child.setAttribute 'stroke-dashoffset', length
       do(child, length, i)->
         setTimeout ->
-          tween = TweenMax.to { p: length }, 2,
+          tween = TweenMax.to { p: length, s: length/1.25 }, 2,
             p: 0
+            s: length
             onUpdate: ()->
               child.setAttribute('stroke-dashoffset', @target.p)
+              # child.setAttribute('stroke-dasharray', @target.s)
             onComplete:->
               if i is it.shape.children.length-1
                 it.fillCharger()

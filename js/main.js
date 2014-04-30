@@ -27,7 +27,6 @@
       }, 20, {
         deg: 360,
         repeat: -1,
-        yoyo: true,
         onUpdate: function(e) {
           var attr;
           attr = "rotate(" + this.target.deg + ", 500, 500)";
@@ -38,7 +37,6 @@
 
     Main.prototype.animateProgress = function() {
       var i, it, tween;
-      console.log(this.scanImage);
       it = this;
       i = -400;
       return tween = TweenMax.to({
@@ -79,9 +77,11 @@
           return setTimeout(function() {
             var tween;
             return tween = TweenMax.to({
-              p: length
+              p: length,
+              s: length / 1.25
             }, 2, {
               p: 0,
+              s: length,
               onUpdate: function() {
                 return child.setAttribute('stroke-dashoffset', this.target.p);
               },

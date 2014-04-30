@@ -2,7 +2,7 @@ class Main
   constructor:(@o={})->
     @vars()
     @animateRainbow()
-    # @animateProgress()
+    @animateProgress()
     @showIphone()
 
   vars:->
@@ -24,6 +24,7 @@ class Main
         it.rainbow.setAttribute 'patternTransform', attr
 
   animateProgress:->
+    console.log @scanImage
     it = @
     i = -400
     tween = TweenMax.to { progress: -400 }, 10,

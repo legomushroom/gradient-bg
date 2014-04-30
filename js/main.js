@@ -6,6 +6,7 @@
       this.o = o != null ? o : {};
       this.vars();
       this.animateRainbow();
+      this.animateProgress();
       this.showIphone();
     }
 
@@ -37,6 +38,7 @@
 
     Main.prototype.animateProgress = function() {
       var i, it, tween;
+      console.log(this.scanImage);
       it = this;
       i = -400;
       return tween = TweenMax.to({

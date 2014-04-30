@@ -7,9 +7,8 @@ html
 	body
 		include assets.svg
 
-		svg(viewBox="0 0 1000 1000")
+		svg(viewBox="0 0 1000 1000").svg
 			g(mask="url(#mask2)")
-				rect(fill="#ccc", width="100%", height="100%")
 				svg(id="process", width="100%")
 					svg(width="1000", viewBox="0 0 1200 1200")
 						rect(id="rainbow", x="-500", y="-500", fill="url(#gradient-pattern)", width="2000", height="2000")

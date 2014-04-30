@@ -5,7 +5,7 @@
     <title>gradient</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
-  <body><svg id="svg" width="1000" height="1000" viewBox="0 0 1000 1000" style="margin-left:100%;position:absolute;">
+  <body><svg id="svg" width="1000" height="1000" viewBox="0 0 1000 1000" style="margin-left:-100%;position:absolute;">
   <defs>
     <linearGradient id="redyel" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stop-color="#ff0000"/>   
@@ -61,9 +61,8 @@
   </defs>
 </svg>
 
-    <svg viewBox="0 0 1000 1000">
+    <svg viewBox="0 0 1000 1000" class="svg">
       <g mask="url(#mask2)">
-        <rect fill="#ccc" width="100%" height="100%"></rect>
         <svg id="process" width="100%">
           <svg width="1000" viewBox="0 0 1200 1200">
             <rect id="rainbow" x="-500" y="-500" fill="url(#gradient-pattern)" width="2000" height="2000"></rect>
@@ -75,4 +74,3 @@
     <script src="js/main.js"></script>
   </body>
 </html>
-<sure>I can continue to do by it guess</sure>

@@ -68,7 +68,7 @@
           <path vector-effect="non-scaling-stroke" fill="none" d="M294,573V101l0,0c0-1.751-1.252-3-3-3H27l0,0c-1.749,0-3,1.249-3,3"/>
           <path id="case_4_" vector-effect="non-scaling-stroke" fill="none" d="M4,614L4,614c-0.335,26.928,21.707,49,49,49h214
             c15.869,0,30.131-7.774,39.1-19.561"/>
-          <path id="case_1_" vector-effect="non-scaling-stroke" fill="none" d="M4,53v41l0,0H2c-0.403,0.4-1,0.998-1,2v27
+          <path id="case_1_" fill="none" vector-effect="non-scaling-stroke" fill="none" d="M4,53v41l0,0H2c-0.403,0.4-1,0.998-1,2v27
             c0,0.845,0.597,1.441,1,1h2v33H2c-0.403-0.096-1,0.501-1,1v20c0,0.816,0.597,1.414,1,1h2v33H2c-0.403-0.037-1,0.561-1,1v20
             c0,0.876,0.597,1.474,1,1h2v380"/>
           <path id="case_5_" vector-effect="non-scaling-stroke" fill="none" d="M316,55.218V53c0-27.261-22.042-49.333-49-49h-3V2
@@ -78,7 +78,41 @@
             "/>
           <path id="js-charger_2_" vector-effect="non-scaling-stroke" fill="none" d="M159.781,702H152v14h-1v27h4v16h2v132v71h2.5" />
         </g>
+        <clipPath id="case-clip">
+          <path vector-effect="non-scaling-stroke" fill="#FF0000" d="M306.1,643.439c6.21-8.213,9.9-18.42,9.9-29.439V53
+        c0-27.261-22.042-49.333-49-49h-3V2c0.007-0.403-0.59-1-1-1h-50c-0.58,0-1.177,0.598-1,1v2H53C25.707,3.667,3.665,25.739,4,53l0,0
+        v41l0,0H2c-0.403,0.4-1,0.998-1,2v27c0,0.845,0.597,1.441,1,1h2v33H2c-0.403-0.096-1,0.501-1,1v20c0,0.816,0.597,1.414,1,1h2v33H2
+        c-0.403-0.037-1,0.561-1,1v20c0,0.876,0.597,1.474,1,1h2v380l0,0c-0.335,26.928,21.707,49,49,49h214
+        C282.869,663,297.131,655.226,306.1,643.439z"/>
+        </clipPath>
+
+        <pattern id="glare-pattern" width="415" height="670" patternUnits="userSpaceOnUse">
+          <rect id="js-glare"
+            style="display:none;"
+            opacity="0.25"
+            opacity=""
+            x="0" y="0" width="80" height="1220" fill="white"
+            transform="rotate(-35), translate(-1000, -307)"
+           />
+          <rect id="js-glare2"
+            style="display:none;"
+            opacity="0.25"
+            x="0" y="0" width="35" height="1220" fill="white"
+            transform="rotate(-35), translate(-1000, -307)"
+           />
+        </pattern>
+
+        <g transform="translate(300,100)">
+          <rect
+            clip-path="url(#case-clip)"
+            fill="url(#glare-pattern)"
+            width="318"
+            height="670">
+          </rect>
+        </g>
+
         <path id="js-charger" stroke-width="0" vector-effect="non-scaling-stroke" fill="none" d="M459.5,1062h2.5v-71l0,0V859h2v-16h4v-27h-1v-14h-7.5H452v14h-1v27h4v16h2v132v71H459.5z"/>
+        
         <rect stroke-width="0" x="400" y="800" fill="url(#black-gradient)" width="160" height="201"></rect>
         <image id="js-scan-image" xlink:href="mockups/shade.png" x="155" y="-500" height="600" width="600"></image>
         <use id="js-radial-point1" xlink:href="#radial-point"></use>

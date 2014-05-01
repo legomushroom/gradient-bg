@@ -2,11 +2,12 @@ class Main
   constructor:(@o={})->
     @vars()
     @animateRainbow()
-    # setTimeout => 
+    # setTimeout =>
     #   @animateProgress()
     # , 3000
 
     @showIphone()
+    
 
   $:(selector)->
     document.querySelector selector
@@ -18,6 +19,8 @@ class Main
     @shape        = @$ '#js-shape'
     @scanImage    = @$ '#js-scan-image'
     @charger      = @$ '#js-charger'
+    @glare        = @$ '#js-glare'
+    @glare2       = @$ '#js-glare2'
 
   animateRainbow:->
     it = @
@@ -47,15 +50,7 @@ class Main
 
   showIphone:->
     it = @
-    # tween = TweenMax.to { p: 100 }, 1,
-    #   p: 200
-    #   repeat: -1
-    #   yoyo: true
-    #   onUpdate: (e)->
-    #     it.rainbow.setAttribute 'width', @target.p
-    console.log @shape.children
     for child, i in @shape.children
-    # child = @shape.children[3]
       length = child.getTotalLength?()
       child.setAttribute 'stroke-dasharray', length
       child.setAttribute 'stroke-dashoffset', length
@@ -72,7 +67,6 @@ class Main
       s: length
       onUpdate: ()->
         child.setAttribute('stroke-dashoffset', @target.p)
-        # child.setAttribute('stroke-dasharray', @target.s)
       onComplete:->
         if i is it.shape.children.length-1
           it.fillCharger()
@@ -86,10 +80,34 @@ class Main
       progress: 1
       onUpdate: ()->
         position = child.getPointAtLength @target.p
-        point?.setAttribute 'transform', "translate(#{position.x+300}, #{position.y+100})"
+        attr = "translate(#{position.x+300}, #{position.y+100})"
+        point.setAttribute 'transform', attr
       onComplete:->
         if i is 5
           it.fadeOutPoint point
+        if i is it.shape.children.length-1
+          it.animateGlare()
+
+  animateGlare:->
+    it = @
+    x = -600
+    tween = TweenMax.to { x: x, o: 0 }, .75,
+      x: 300
+      o: .75
+      onUpdate: (e)->
+        attr  = "rotate(-35), translate(#{@.target.x}, -307)"
+        attr2 = "rotate(-35), translate(#{@.target.x - 50}, -307)"
+        it.glare.setAttribute   'transform', attr
+        it.glare2.setAttribute  'transform', attr2
+        it.glare.setAttribute   'opacity', @target.o
+        it.glare2.setAttribute  'opacity', @target.o
+      onComplete:=>
+        @glare.style.display  = 'none'
+        @glare2.style.display = 'none'
+      onStart:=>
+        @glare.style.display  = 'block'
+        @glare2.style.display = 'block'
+
 
   fadeOutPoint:(point)->
     it = @
@@ -99,7 +117,7 @@ class Main
       p: 0
       o: 0
       onUpdate: ()->
-        radialPoint?.setAttribute 'r', @target.p
-        radialPoint?.setAttribute 'opacity', @target.o
+        radialPoint.setAttribute 'r', @target.p
+        radialPoint.setAttribute 'opacity', @target.o
 
 new Main

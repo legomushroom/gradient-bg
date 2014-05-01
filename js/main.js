@@ -19,7 +19,9 @@
       this.mask = this.$('#mask2');
       this.shape = this.$('#js-shape');
       this.scanImage = this.$('#js-scan-image');
-      return this.charger = this.$('#js-charger');
+      this.charger = this.$('#js-charger');
+      this.glare = this.$('#js-glare');
+      return this.glare2 = this.$('#js-glare2');
     };
 
     Main.prototype.animateRainbow = function() {
@@ -68,7 +70,6 @@
     Main.prototype.showIphone = function() {
       var child, i, it, length, _i, _len, _ref, _results;
       it = this;
-      console.log(this.shape.children);
       _ref = this.shape.children;
       _results = [];
       for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
@@ -118,15 +119,53 @@
         p: length,
         progress: 1,
         onUpdate: function() {
-          var position;
+          var attr, position;
           position = child.getPointAtLength(this.target.p);
-          return point != null ? point.setAttribute('transform', "translate(" + (position.x + 300) + ", " + (position.y + 100) + ")") : void 0;
+          attr = "translate(" + (position.x + 300) + ", " + (position.y + 100) + ")";
+          return point.setAttribute('transform', attr);
         },
         onComplete: function() {
           if (i === 5) {
-            return it.fadeOutPoint(point);
+            it.fadeOutPoint(point);
+          }
+          if (i === it.shape.children.length - 1) {
+            return it.animateGlare();
           }
         }
+      });
+    };
+
+    Main.prototype.animateGlare = function() {
+      var it, tween, x;
+      it = this;
+      x = -600;
+      return tween = TweenMax.to({
+        x: x,
+        o: 0
+      }, .75, {
+        x: 300,
+        o: .75,
+        onUpdate: function(e) {
+          var attr, attr2;
+          attr = "rotate(-35), translate(" + this.target.x + ", -307)";
+          attr2 = "rotate(-35), translate(" + (this.target.x - 50) + ", -307)";
+          it.glare.setAttribute('transform', attr);
+          it.glare2.setAttribute('transform', attr2);
+          it.glare.setAttribute('opacity', this.target.o);
+          return it.glare2.setAttribute('opacity', this.target.o);
+        },
+        onComplete: (function(_this) {
+          return function() {
+            _this.glare.style.display = 'none';
+            return _this.glare2.style.display = 'none';
+          };
+        })(this),
+        onStart: (function(_this) {
+          return function() {
+            _this.glare.style.display = 'block';
+            return _this.glare2.style.display = 'block';
+          };
+        })(this)
       });
     };
 
@@ -142,10 +181,8 @@
         p: 0,
         o: 0,
         onUpdate: function() {
-          if (radialPoint != null) {
-            radialPoint.setAttribute('r', this.target.p);
-          }
-          return radialPoint != null ? radialPoint.setAttribute('opacity', this.target.o) : void 0;
+          radialPoint.setAttribute('r', this.target.p);
+          return radialPoint.setAttribute('opacity', this.target.o);
         }
       });
     };

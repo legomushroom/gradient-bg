@@ -120,7 +120,7 @@
         onUpdate: function() {
           var position;
           position = child.getPointAtLength(this.target.p);
-          return point.setAttribute('transform', "translate(" + (position.x + 300) + ", " + (position.y + 100) + ")");
+          return point != null ? point.setAttribute('transform', "translate(" + (position.x + 300) + ", " + (position.y + 100) + ")") : void 0;
         },
         onComplete: function() {
           if (i === 5) {
@@ -142,8 +142,10 @@
         p: 0,
         o: 0,
         onUpdate: function() {
-          radialPoint.setAttribute('r', this.target.p);
-          return radialPoint.setAttribute('opacity', this.target.o);
+          if (radialPoint != null) {
+            radialPoint.setAttribute('r', this.target.p);
+          }
+          return radialPoint != null ? radialPoint.setAttribute('opacity', this.target.o) : void 0;
         }
       });
     };

@@ -86,7 +86,7 @@ class Main
       progress: 1
       onUpdate: ()->
         position = child.getPointAtLength @target.p
-        point.setAttribute 'transform', "translate(#{position.x+300}, #{position.y+100})"
+        point?.setAttribute 'transform', "translate(#{position.x+300}, #{position.y+100})"
       onComplete:->
         if i is 5
           it.fadeOutPoint point
@@ -99,7 +99,7 @@ class Main
       p: 0
       o: 0
       onUpdate: ()->
-        radialPoint.setAttribute 'r', @target.p
-        radialPoint.setAttribute 'opacity', @target.o
+        radialPoint?.setAttribute 'r', @target.p
+        radialPoint?.setAttribute 'opacity', @target.o
 
 new Main

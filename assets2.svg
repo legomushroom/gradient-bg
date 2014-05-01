@@ -19,24 +19,70 @@
 		<sliceSourceBounds  height="2062" width="914" bottomLeftOrigin="true" y="-545.5" x="-488.5"></sliceSourceBounds>
 	</sfw>
 </metadata>
+<pattern  x="484.5" y="516.5" width="100" height="995" patternUnits="userSpaceOnUse" id="gradient-pattern" viewBox="0 -995 100 995" overflow="visible">
+	<g>
+		<polygon fill="none" points="0,0 100,0 100,-995 0,-995 		"/>
+		<g id="js-gradient_1_">
+			
+				<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="8097.6396" y1="-8254.7754" x2="8097.6396" y2="-8253.7754" gradientTransform="matrix(100 0 0 -166.6667 -809714 -1375795.875)">
+				<stop  offset="0" style="stop-color:#FF0000"/>
+				<stop  offset="1" style="stop-color:#FFFF00"/>
+			</linearGradient>
+			<polygon fill="url(#SVGID_1_)" points="0,0 100,0 100,-166.667 0,-166.667 			"/>
+			
+				<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="8097.6396" y1="-8254.7754" x2="8097.6396" y2="-8253.7754" gradientTransform="matrix(100 0 0 -166.6667 -809714 -1375961.5)">
+				<stop  offset="0" style="stop-color:#FFFF00"/>
+				<stop  offset="1" style="stop-color:#00FF00"/>
+			</linearGradient>
+			<polygon fill="url(#SVGID_2_)" points="0,-165.667 100,-165.667 100,-332.333 0,-332.333 			"/>
+			
+				<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="8097.6396" y1="-8254.7754" x2="8097.6396" y2="-8253.7754" gradientTransform="matrix(100 0 0 -166.6667 -809714 -1376127.25)">
+				<stop  offset="0" style="stop-color:#00FF00"/>
+				<stop  offset="1" style="stop-color:#00FFFF"/>
+			</linearGradient>
+			<polygon fill="url(#SVGID_3_)" points="0,-331.333 100,-331.333 100,-498 0,-498 			"/>
+			
+				<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="8097.6396" y1="-8254.7744" x2="8097.6396" y2="-8253.7744" gradientTransform="matrix(100 0 0 -166.6667 -809714 -1376292.875)">
+				<stop  offset="0" style="stop-color:#00FFFF"/>
+				<stop  offset="1" style="stop-color:#0000FF"/>
+			</linearGradient>
+			<polygon fill="url(#SVGID_4_)" points="0,-497 100,-497 100,-663.667 0,-663.667 			"/>
+			
+				<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="8097.6396" y1="-8254.7754" x2="8097.6396" y2="-8253.7754" gradientTransform="matrix(100 0 0 -166.6667 -809714 -1376458.5)">
+				<stop  offset="0" style="stop-color:#0000FF"/>
+				<stop  offset="1" style="stop-color:#FF00FF"/>
+			</linearGradient>
+			<polygon fill="url(#SVGID_5_)" points="0,-662.667 100,-662.667 100,-829.333 0,-829.333 			"/>
+			
+				<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="8097.6396" y1="-8254.7754" x2="8097.6396" y2="-8253.7754" gradientTransform="matrix(100 0 0 -166.6667 -809714 -1376624.25)">
+				<stop  offset="0" style="stop-color:#FF00FF"/>
+				<stop  offset="1" style="stop-color:#FF0000"/>
+			</linearGradient>
+			<polygon fill="url(#SVGID_6_)" points="0,-828.333 100,-828.333 100,-995 0,-995 			"/>
+		</g>
+	</g>
+</pattern>
 <g id="js-shape" transform="translate(300,100)">
 	<path vector-effect="non-scaling-stroke" fill="none" d="M160,43c3.09,0,6-2.91,6-6c0-4.09-2.91-7-6-7c-4.09,0-7,2.91-7,7
 		C153,40.09,155.91,43,160,43z"/>
 	<path vector-effect="non-scaling-stroke" fill="none" d="M179,59h-14h-5h-14c-1.767,0-3,1.12-3,3c0,0.88,1.233,2,3,2h14h5h14
 		c1.767,0,3-1.12,3-2C182,60.12,180.766,59,179,59L179,59z"/>
-	<path fill="none" d="M159,648c16.017,0,29-12.983,29-29s-12.983-29-29-29s-29,12.983-29,29S142.983,648,159,648z"/>
-	<path vector-effect="non-scaling-stroke" fill="none" d="M294,573V101l0,0c0-1.751-1.252-3-3-3H27l0,0c-1.749,0-3,1.249-3,3v472
-		l0,0c0,1.751,1.251,3,3,3h264C292.748,576,294,574.751,294,573"/>
-	<path id="case_1_" vector-effect="non-scaling-stroke" fill="none" d="M306.1,643.439c6.21-8.213,9.9-18.42,9.9-29.439V53
-		c0-27.261-22.042-49.333-49-49h-3V2c0.007-0.403-0.59-1-1-1h-50c-0.58,0-1.177,0.598-1,1v2H53C25.707,3.667,3.665,25.739,4,53l0,0
-		v41l0,0H2c-0.403,0.4-1,0.998-1,2v27c0,0.845,0.597,1.441,1,1h2v33H2c-0.403-0.096-1,0.501-1,1v20c0,0.816,0.597,1.414,1,1h2v33H2
-		c-0.403-0.037-1,0.561-1,1v20c0,0.876,0.597,1.474,1,1h2v380l0,0c-0.335,26.928,21.707,49,49,49h214
-		C282.869,663,297.131,655.226,306.1,643.439"/>
+	<path fill="none" d="M158.891,648C174.907,648,188,635.017,188,619s-13.606-28.994-29.623-28.994"/>
+	<path fill="none" d="M158.377,590.006C142.648,590.338,130,603.191,130,619c0,15.943,12.975,28.881,28.891,29"/>
+	<path vector-effect="non-scaling-stroke" fill="none" d="M24,101v472l0,0c0,1.751,1.251,3,3,3h264c1.748,0,3-1.249,3-3"/>
+	<path vector-effect="non-scaling-stroke" fill="none" d="M294,573V101l0,0c0-1.751-1.252-3-3-3H27l0,0c-1.749,0-3,1.249-3,3"/>
+	<path id="case_4_" vector-effect="non-scaling-stroke" fill="none" d="M4,614L4,614c-0.335,26.928,21.707,49,49,49h214
+		c15.869,0,30.131-7.774,39.1-19.561"/>
+	<path id="case_1_" vector-effect="non-scaling-stroke" fill="none" d="M4,53v41l0,0H2c-0.403,0.4-1,0.998-1,2v27
+		c0,0.845,0.597,1.441,1,1h2v33H2c-0.403-0.096-1,0.501-1,1v20c0,0.816,0.597,1.414,1,1h2v33H2c-0.403-0.037-1,0.561-1,1v20
+		c0,0.876,0.597,1.474,1,1h2v380"/>
+	<path id="case_5_" vector-effect="non-scaling-stroke" fill="none" d="M316,55.218V53c0-27.261-22.042-49.333-49-49h-3V2
+		c0.007-0.403-0.59-1-1-1h-50c-0.58,0-1.177,0.598-1,1v2H53C25.707,3.667,3.665,25.739,4,53l0,0"/>
+	<path id="case_3_" vector-effect="non-scaling-stroke" fill="none" d="M306.1,643.439c6.21-8.213,9.9-18.42,9.9-29.439V55.218"/>
 	<path id="js-charger_3_" vector-effect="non-scaling-stroke" fill="none" d="M159.5,962h2.5v-71l0,0V759h2v-16h4v-27h-1v-14h-7.5"
 		/>
 	<path id="js-charger_2_" vector-effect="non-scaling-stroke" fill="none" d="M159.5,702H152v14h-1v27h4v16h2v132v71h2.5"/>
 </g>
-<rect x="400" y="800" fill="none" width="160" height="201"/>
 <image overflow="visible" enable-background="new    " width="400" height="400" id="js-scan-image" xlink:href="mockups/shade.png"  transform="matrix(1.5 0 0 1.5 310 -1000)">
 </image>
 <g id="js-radial-point1">
@@ -64,4 +110,6 @@
 		<stop  style="stop-color: #000000;" offset="1"></stop>
 	</lineargradient>
 </defs>
+<path id="js-charger_1_" vector-effect="non-scaling-stroke" fill="url(#gradient-pattern)" d="M459.5,1062h2.5v-71l0,0V859h2v-16h4
+	v-27h-1v-14h-7.5H452v14h-1v27h4v16h2v132v71H459.5z"/>
 </svg>

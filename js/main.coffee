@@ -67,7 +67,7 @@ class Main
 
   animateStroke:(child, length, i )->
     it = @
-    tween = TweenMax.to { p: length, s: length/1.25 }, 3,
+    tween = TweenMax.to { p: length, s: length/1.25 }, 1.5,
       p: 0
       s: length
       onUpdate: ()->
@@ -81,7 +81,7 @@ class Main
     it = @
     point = @$ "#js-radial-point#{i+1}"
     length = child.getTotalLength()
-    tween = TweenMax.to { p: 0, progress: 0 }, 3,
+    tween = TweenMax.to { p: 0, progress: 0 }, 1.5,
       p: length
       progress: 1
       onUpdate: ()->

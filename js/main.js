@@ -92,7 +92,7 @@
       return tween = TweenMax.to({
         p: length,
         s: length / 1.25
-      }, 3, {
+      }, 1.5, {
         p: 0,
         s: length,
         onUpdate: function() {
@@ -114,7 +114,7 @@
       return tween = TweenMax.to({
         p: 0,
         progress: 0
-      }, 3, {
+      }, 1.5, {
         p: length,
         progress: 1,
         onUpdate: function() {

@@ -6,17 +6,20 @@
       this.o = o != null ? o : {};
       this.vars();
       this.animateRainbow();
-      this.animateProgress();
       this.showIphone();
     }
 
+    Main.prototype.$ = function(selector) {
+      return document.querySelector(selector);
+    };
+
     Main.prototype.vars = function() {
       this.currentProgress = 2000;
-      this.rainbow = document.getElementById('gradient-pattern');
-      this.mask = document.getElementById('mask2');
-      this.shape = document.getElementById('js-shape');
-      this.scanImage = document.getElementById('js-scan-image');
-      return this.charger = document.getElementById('js-charger');
+      this.rainbow = this.$('#gradient-pattern');
+      this.mask = this.$('#mask2');
+      this.shape = this.$('#js-shape');
+      this.scanImage = this.$('#js-scan-image');
+      return this.charger = this.$('#js-charger');
     };
 
     Main.prototype.animateRainbow = function() {
@@ -24,7 +27,7 @@
       it = this;
       return tween = TweenMax.to({
         deg: 0
-      }, 20, {
+      }, 10, {
         deg: 360,
         repeat: -1,
         onUpdate: function(e) {
@@ -43,7 +46,6 @@
         progress: -400
       }, 10, {
         progress: 1200,
-        repeat: -1,
         onUpdate: function(e) {
           return it.scanImage.setAttribute('y', this.target.progress);
         }
@@ -55,7 +57,7 @@
       it = this;
       return tween = TweenMax.to({
         p: 0
-      }, 2, {
+      }, 1, {
         p: 1,
         onUpdate: function(e) {
           return it.charger.setAttribute('fill', "rgba(255,255,255," + this.target.p + ")");
@@ -66,6 +68,7 @@
     Main.prototype.showIphone = function() {
       var child, i, it, length, _i, _len, _ref, _results;
       it = this;
+      console.log(this.shape.children);
       _ref = this.shape.children;
       _results = [];
       for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
@@ -75,26 +78,74 @@
         child.setAttribute('stroke-dashoffset', length);
         _results.push((function(child, length, i) {
           return setTimeout(function() {
-            var tween;
-            return tween = TweenMax.to({
-              p: length,
-              s: length / 1.25
-            }, 2, {
-              p: 0,
-              s: length,
-              onUpdate: function() {
-                return child.setAttribute('stroke-dashoffset', this.target.p);
-              },
-              onComplete: function() {
-                if (i === it.shape.children.length - 1) {
-                  return it.fillCharger();
-                }
-              }
-            });
+            it.animateStroke(child, length, i);
+            return it.animatePoint(child, length, i);
           }, 500);
         })(child, length, i));
       }
       return _results;
+    };
+
+    Main.prototype.animateStroke = function(child, length, i) {
+      var it, tween;
+      it = this;
+      return tween = TweenMax.to({
+        p: length,
+        s: length / 1.25
+      }, 3, {
+        p: 0,
+        s: length,
+        onUpdate: function() {
+          return child.setAttribute('stroke-dashoffset', this.target.p);
+        },
+        onComplete: function() {
+          if (i === it.shape.children.length - 1) {
+            return it.fillCharger();
+          }
+        }
+      });
+    };
+
+    Main.prototype.animatePoint = function(child, length, i) {
+      var it, point, tween;
+      it = this;
+      point = this.$("#js-radial-point" + (i + 1));
+      length = child.getTotalLength();
+      return tween = TweenMax.to({
+        p: 0,
+        progress: 0
+      }, 3, {
+        p: length,
+        progress: 1,
+        onUpdate: function() {
+          var position;
+          position = child.getPointAtLength(this.target.p);
+          return point.setAttribute('transform', "translate(" + (position.x + 300) + ", " + (position.y + 100) + ")");
+        },
+        onComplete: function() {
+          if (i === 5) {
+            return it.fadeOutPoint(point);
+          }
+        }
+      });
+    };
+
+    Main.prototype.fadeOutPoint = function(point) {
+      var it, r, radialPoint, tween;
+      it = this;
+      radialPoint = this.$('#radial-point');
+      r = parseInt(radialPoint.getAttribute('r'), 10);
+      return tween = TweenMax.to({
+        p: r,
+        o: .5
+      }, .5, {
+        p: 0,
+        o: 0,
+        onUpdate: function() {
+          radialPoint.setAttribute('r', this.target.p);
+          return radialPoint.setAttribute('opacity', this.target.o);
+        }
+      });
     };
 
     return Main;

@@ -40,6 +40,7 @@ var paths = {
 
 gulp.task('stylus', function(){
 	return gulp.src(devFolder + 'css/main.styl')
+					.pipe(plumber())
 					.pipe(stylus())
 					.pipe(autoprefixer('last 4 version'))
 					.pipe(minifycss())
@@ -72,6 +73,7 @@ gulp.task('coffee:tests', function(e){
 
 gulp.task('kit:jade', function(e){
 	return gulp.src(paths.src.kit)
+					.pipe(plumber())
 					.pipe(jade({pretty:true}))
 					.pipe(gulp.dest(paths.dist.kit))
 					.pipe(livereload())
@@ -79,6 +81,7 @@ gulp.task('kit:jade', function(e){
 
 gulp.task('index:jade', function(e){
 	return gulp.src(paths.src.index)
+					.pipe(plumber())
 					.pipe(jade({pretty:true}))
 					.pipe(gulp.dest(paths.dist.index))
 					.pipe(livereload())

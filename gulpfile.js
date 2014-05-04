@@ -106,23 +106,19 @@ gulp.task('default', function(){
 
 	gulp.watch(paths.src.kit, function(e){
 		gulp.run('kit:jade');
-		// server.changed(e.path);
 	});
 
 	gulp.watch(paths.src.index, function(e){
 		gulp.run('index:jade');
-		// server.changed(e.path);
 	});
 
 	gulp.watch(paths.src.partials, function(e){
 		gulp.run('kit:jade');
 		gulp.run('index:jade');
-		// server.changed(e.path);
 	});
 
 	gulp.watch(paths.src.templates, function(e){
 		gulp.run('index:jade');
-		// server.changed(e.path);
 	});
 });
 

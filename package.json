@@ -1,11 +1,11 @@
 {
-  "name": "peel-name",
+  "name": "gradient-name",
   "version": "0.0.0",
   "license": "MIT",
   "author": {
-    "name": "LegoMushroom",
-    "email": "legomushroom@gmail.com",
-    "url": "http://legomushroom.com"
+    "name":   "LegoMushroom",
+    "email":  "legomushroom@gmail.com",
+    "url":    "http://legomushroom.com"
   },
   "private": false,
   "dependencies": {},

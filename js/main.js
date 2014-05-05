@@ -39,9 +39,7 @@
       }, 20, {
         deg: 540,
         repeat: -1,
-        ease: function(a) {
-          return a;
-        },
+        ease: Linear.easeNone,
         onUpdate: function(e) {
           var attr;
           attr = "rotate(" + this.target.deg + ", 500, 500)";
@@ -57,7 +55,7 @@
     Main.prototype.showScanLine = function() {
       var it, tween;
       it = this;
-      tween = TweenMax.to({
+      return tween = TweenMax.to({
         width: 0,
         x: 450
       }, 1, {
@@ -74,16 +72,20 @@
             _this.scanLine.style.display = 'block';
             return _this.scanImage.style.display = 'block';
           };
+        })(this),
+        onComplete: (function(_this) {
+          return function() {
+            return _this.animateScan();
+          };
         })(this)
       });
-      return this.animateScan();
     };
 
     Main.prototype.animateScan = function() {
       var it, tween;
       it = this;
       return tween = TweenMax.to({
-        y: -200
+        y: 0
       }, 3, {
         y: 800,
         onUpdate: function(e) {

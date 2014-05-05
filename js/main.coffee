@@ -30,7 +30,7 @@ class Main
       deg: 540
       repeat: -1
       # yoyo: true
-      ease: (a)-> a
+      ease: Linear.easeNone
       onUpdate: (e)->
         attr = "rotate(#{@target.deg}, 500, 500)"
         it.rainbow.setAttribute 'patternTransform', attr
@@ -52,14 +52,13 @@ class Main
       onStart:=>
         @scanLine.style.display = 'block'
         @scanImage.style.display = 'block'
-
-    @animateScan()
-    
+      onComplete:=>
+        @animateScan()
         
 
   animateScan:->
     it = @
-    tween = TweenMax.to { y: -200}, 3,
+    tween = TweenMax.to { y: 0 }, 3,
       y: 800
       # repeat: -1
       onUpdate: (e)->

@@ -63,14 +63,11 @@
         x: 158,
         onUpdate: function(e) {
           it.scanLine.setAttribute('width', this.target.width);
-          it.scanLine.setAttribute('x', this.target.x);
-          it.scanImage.setAttribute('width', this.target.width);
-          return it.scanImage.setAttribute('x', this.target.x);
+          return it.scanLine.setAttribute('x', this.target.x);
         },
         onStart: (function(_this) {
           return function() {
-            _this.scanLine.style.display = 'block';
-            return _this.scanImage.style.display = 'block';
+            return _this.scanLine.style.display = 'block';
           };
         })(this),
         onComplete: (function(_this) {
@@ -84,12 +81,41 @@
     Main.prototype.animateScan = function() {
       var it, tween;
       it = this;
-      return tween = TweenMax.to({
+      tween = TweenMax.to({
         y: 0
       }, 3, {
-        y: 800,
+        y: 900,
+        ease: Power1.easeInOut,
         onUpdate: function(e) {
           return it.scan.setAttribute('transform', "translate(0, " + this.target.y + ")");
+        },
+        onComplete: (function(_this) {
+          return function() {
+            return _this.hideScanGlow();
+          };
+        })(this)
+      });
+      return tween = TweenMax.to({
+        yImage: 20
+      }, .5, {
+        yImage: -240,
+        ease: Linear.easeNone,
+        onUpdate: function(e) {
+          return it.scanImage.setAttribute('y', this.target.yImage);
+        }
+      });
+    };
+
+    Main.prototype.hideScanGlow = function() {
+      var it, tween;
+      it = this;
+      return tween = TweenMax.to({
+        yImage: -240
+      }, .5, {
+        yImage: 20,
+        ease: Linear.easeNone,
+        onUpdate: function(e) {
+          return it.scanImage.setAttribute('y', this.target.yImage);
         }
       });
     };

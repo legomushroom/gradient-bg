@@ -47,22 +47,37 @@ class Main
       onUpdate: (e)->
         it.scanLine.setAttribute('width', @target.width)
         it.scanLine.setAttribute('x', @target.x)
-        it.scanImage.setAttribute('width', @target.width)
-        it.scanImage.setAttribute('x', @target.x)
+        # it.scanImage.setAttribute('width', @target.width)
+        # it.scanImage.setAttribute('x', @target.x)
       onStart:=>
         @scanLine.style.display = 'block'
-        @scanImage.style.display = 'block'
+        # @scanImage.style.display = 'block'
       onComplete:=>
         @animateScan()
         
-
   animateScan:->
     it = @
     tween = TweenMax.to { y: 0 }, 3,
-      y: 800
-      # repeat: -1
+      y: 900
+      ease: Power1.easeInOut
       onUpdate: (e)->
         it.scan.setAttribute('transform', "translate(0, #{@target.y})")
+      onComplete:=>
+        @hideScanGlow()
+
+    tween = TweenMax.to { yImage: 20 }, .5,
+      yImage: -240
+      ease: Linear.easeNone
+      onUpdate: (e)->
+        it.scanImage.setAttribute('y', @target.yImage)
+
+  hideScanGlow:->
+    it = @
+    tween = TweenMax.to { yImage: -240 }, .5,
+      yImage: 20
+      ease: Linear.easeNone
+      onUpdate: (e)->
+        it.scanImage.setAttribute('y', @target.yImage)
 
   fillCharger:->
     it = @

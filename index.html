@@ -16,6 +16,24 @@
         <stop id="js-radial-points-opacity" stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
     </radialGradient> -->
 
+    <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="scan-line-gradient">
+      <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+      <stop stop-color="#FFFFFF" offset="50%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+    </linearGradient>
+
+    <radialGradient cx="50%" cy="100%" fx="50%" fy="100%" r="49.3509017%" id="scan-radial-gradient">
+        <stop stop-color="#FFFFFF" offset="0%"></stop>
+        <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+    </radialGradient>
+
+
+    <linearGradient id="magred" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#ff00ff"/>   
+        <stop offset="100%" stop-color="#ff0000"/>   
+    </linearGradient>
+    
+
     <lineargradient id="black-gradient" gradientunits="userSpaceOnUse" x1="188.5" y1="800" x2="188.5" y2="1000">
       <stop offset="0" style="stop-color: #000000; stop-opacity: 0;"></stop>
       <stop offset="1" style="stop-color: #000000;"></stop>
@@ -91,17 +109,16 @@
             style="display:none;"
             opacity="0.25"
             opacity=""
-            x="0" y="0" width="80" height="1220" fill="white"
+            x="0" y="0" width="80" height="1230" fill="white"
             transform="rotate(-35), translate(-1000, -307)"
            />
           <rect id="js-glare2"
             style="display:none;"
             opacity="0.25"
-            x="0" y="0" width="35" height="1220" fill="white"
+            x="0" y="0" width="35" height="1230" fill="white"
             transform="rotate(-35), translate(-1000, -307)"
            />
         </pattern>
-
         <g transform="translate(300,100)">
           <rect
             clip-path="url(#case-clip)"
@@ -110,11 +127,13 @@
             height="670">
           </rect>
         </g>
-
-        <path id="js-charger" stroke-width="0" vector-effect="non-scaling-stroke" fill="none" d="M459.5,1062h2.5v-71l0,0V859h2v-16h4v-27h-1v-14h-7.5H452v14h-1v27h4v16h2v132v71H459.5z"/>
-        
+        <path id="js-charger" style="-webkit-transform:translateZ(1px)" stroke-width="0" vector-effect="non-scaling-stroke" fill="none" d="M459.5,1062h2.5v-71l0,0V859h2v-16h4v-27h-1v-14h-7.5H452v14h-1v27h4v16h2v132v71H459.5z"/>
         <rect stroke-width="0" x="400" y="800" fill="url(#black-gradient)" width="160" height="201"></rect>
-        <image id="js-scan-image" xlink:href="mockups/shade.png" x="155" y="-500" height="600" width="600"></image>
+        <g id="js-scan">
+          <!-- <rect fill="url(#scan-radial-gradient)" stroke-width="0" id="js-scan-image" height="600" width="600" class="h-g" x="158" y="-550" /> -->
+          <image  id="js-scan-image" xlink:href="mockups/shade.png" x="158" y="-244" height="600" width="600" class="h-g"></image>
+          <rect id="js-scan-line" fill="url(#scan-line-gradient)" stroke-width="0" height="3" width="600" x="158" y="50" class="h-g" />  
+        </g>
         <use id="js-radial-point1" xlink:href="#radial-point"></use>
         <use id="js-radial-point2" xlink:href="#radial-point"></use>
         <use id="js-radial-point3" xlink:href="#radial-point"></use>
@@ -137,6 +156,8 @@
       </g>
     </svg>
     <script src="js/tweenmax.min.js"></script>
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/velocity/jquery.velocity.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

@@ -8,6 +8,6 @@
   ],
   "dependencies": {
     "jquery": "~1.8.2",
-    "lodash.underscore": "~1.8.2"
+    "velocity": ""
   }
 }

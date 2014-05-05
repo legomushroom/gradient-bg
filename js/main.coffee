@@ -2,9 +2,9 @@ class Main
   constructor:(@o={})->
     @vars()
     @animateRainbow()
-    # setTimeout =>
-    #   @animateProgress()
-    # , 3000
+    setTimeout =>
+      @animateProgress()
+    , 3000
 
     @showIphone()
     
@@ -17,29 +17,53 @@ class Main
     @rainbow      = @$ '#gradient-pattern'
     @mask         = @$ '#mask2'
     @shape        = @$ '#js-shape'
-    @scanImage    = @$ '#js-scan-image'
     @charger      = @$ '#js-charger'
     @glare        = @$ '#js-glare'
     @glare2       = @$ '#js-glare2'
+    @scanLine     = @$ '#js-scan-line'
+    @scanImage    = @$ '#js-scan-image'
+    @scan         = @$ '#js-scan'
 
   animateRainbow:->
     it = @
-    tween = TweenMax.to { deg: 0 }, 10,
-      deg: 360
+    tween = TweenMax.to { deg: 180 }, 20,
+      deg: 540
       repeat: -1
       # yoyo: true
+      ease: (a)-> a
       onUpdate: (e)->
         attr = "rotate(#{@target.deg}, 500, 500)"
         it.rainbow.setAttribute 'patternTransform', attr
 
   animateProgress:->
+    @showScanLine()
+
+  showScanLine:->
     it = @
-    i = -400
-    tween = TweenMax.to { progress: -400 }, 10,
-      progress: 1200
+    tween = TweenMax.to { width: 0, x: 450 }, 1,
+      width: 600
+      x: 158
       # repeat: -1
       onUpdate: (e)->
-        it.scanImage.setAttribute('y', @target.progress)
+        it.scanLine.setAttribute('width', @target.width)
+        it.scanLine.setAttribute('x', @target.x)
+        it.scanImage.setAttribute('width', @target.width)
+        it.scanImage.setAttribute('x', @target.x)
+      onStart:=>
+        @scanLine.style.display = 'block'
+        @scanImage.style.display = 'block'
+
+    @animateScan()
+    
+        
+
+  animateScan:->
+    it = @
+    tween = TweenMax.to { y: -200}, 3,
+      y: 800
+      # repeat: -1
+      onUpdate: (e)->
+        it.scan.setAttribute('transform', "translate(0, #{@target.y})")
 
   fillCharger:->
     it = @
@@ -119,5 +143,8 @@ class Main
       onUpdate: ()->
         radialPoint.setAttribute 'r', @target.p
         radialPoint.setAttribute 'opacity', @target.o
+      onComplete: ->
+        radialPoint.style.display = 'none'
+
 
 new Main

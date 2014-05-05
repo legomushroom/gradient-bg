@@ -1,0 +1,13 @@
+{
+  "name": "velocity",
+  "homepage": "https://github.com/ClearSlide/velocity",
+  "_release": "318d8e9988",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "318d8e9988b816e61214f8d805b253d86f07471f"
+  },
+  "_source": "git://github.com/ClearSlide/velocity.git",
+  "_target": "*",
+  "_originalSource": "velocity"
+}

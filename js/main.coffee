@@ -54,6 +54,18 @@ class Main
         # @scanImage.style.display = 'block'
       onComplete:=>
         @animateScan()
+
+  hideScanLine:->
+    it = @
+    tween = TweenMax.to { width: 600, x: 158 }, .75,
+      width: 0
+      x: 459
+      ease: Power1.easeInOut
+      onUpdate: (e)->
+        it.scanLine.setAttribute('width', @target.width)
+        it.scanLine.setAttribute('x', @target.x)
+      onStart:=>
+        @scanLine.style.display = 'block'
         
   animateScan:->
     it = @
@@ -64,6 +76,7 @@ class Main
         it.scan.setAttribute('transform', "translate(0, #{@target.y})")
       onComplete:=>
         @hideScanGlow()
+        @hideScanLine()
 
     tween = TweenMax.to { yImage: 20 }, .5,
       yImage: -240
@@ -73,11 +86,12 @@ class Main
 
   hideScanGlow:->
     it = @
-    tween = TweenMax.to { yImage: -240 }, .5,
-      yImage: 20
+    tween = TweenMax.to { yImage: -240 }, .75,
+      yImage: 50
       ease: Linear.easeNone
       onUpdate: (e)->
         it.scanImage.setAttribute('y', @target.yImage)
+        
 
   fillCharger:->
     it = @

@@ -78,6 +78,28 @@
       });
     };
 
+    Main.prototype.hideScanLine = function() {
+      var it, tween;
+      it = this;
+      return tween = TweenMax.to({
+        width: 600,
+        x: 158
+      }, .75, {
+        width: 0,
+        x: 459,
+        ease: Power1.easeInOut,
+        onUpdate: function(e) {
+          it.scanLine.setAttribute('width', this.target.width);
+          return it.scanLine.setAttribute('x', this.target.x);
+        },
+        onStart: (function(_this) {
+          return function() {
+            return _this.scanLine.style.display = 'block';
+          };
+        })(this)
+      });
+    };
+
     Main.prototype.animateScan = function() {
       var it, tween;
       it = this;
@@ -91,7 +113,8 @@
         },
         onComplete: (function(_this) {
           return function() {
-            return _this.hideScanGlow();
+            _this.hideScanGlow();
+            return _this.hideScanLine();
           };
         })(this)
       });
@@ -111,8 +134,8 @@
       it = this;
       return tween = TweenMax.to({
         yImage: -240
-      }, .5, {
-        yImage: 20,
+      }, .75, {
+        yImage: 50,
         ease: Linear.easeNone,
         onUpdate: function(e) {
           return it.scanImage.setAttribute('y', this.target.yImage);

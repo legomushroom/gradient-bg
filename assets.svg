@@ -76,7 +76,7 @@
           99%
         </text>
 
-        <text id="js-progress-text2" style="fill: white; font-size: 110px; font-family: 'Wire One', sans-serif; font-weight: 100;" x="405" y="400" transform="scale(0, -1)" width="50" height="50">
+        <text id="js-progress-text2" style="fill: white; font-size: 110px; font-family: 'Wire One', sans-serif; font-weight: 100;" x="405" y="400" transform="scale(1, -1) translate(0, -810)" width="50" height="50">
          99%
         </text>
 

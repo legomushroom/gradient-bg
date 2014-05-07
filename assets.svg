@@ -72,13 +72,18 @@
     </pattern>
 
     <mask id="mask2">
-        <text id="js-progress-text" style="fill: white; font-size: 110px; font-family: 'Wire One', sans-serif; font-weight: 100;" x="405" y="400">
-          99%
-        </text>
+        
 
         <text id="js-progress-text2" style="fill: white; font-size: 110px; font-family: 'Wire One', sans-serif; font-weight: 100;" x="405" y="400" transform="scale(1, -1) translate(0, -810)" width="50" height="50">
          99%
         </text>
+
+        <image stroke-width="2" stroke="white" xlink:href="css/i/black-gradient.png" stroke-width="2" x="380" y="350" width="160" height="200"></image>
+
+        <text id="js-progress-text" style="fill: white; font-size: 110px; font-family: 'Wire One', sans-serif; font-weight: 100;" x="405" y="400">
+          99%
+        </text>
+
 
         <g id="js-shape" transform="translate(300,100)">
           <path vector-effect="non-scaling-stroke" fill="none" d="M160,43c3.09,0,6-2.91,6-6c0-4.09-2.91-7-6-7c-4.09,0-7,2.91-7,7
@@ -134,6 +139,8 @@
         </g>
         <path id="js-charger" style="-webkit-transform:translateZ(1px)" stroke-width="0" vector-effect="non-scaling-stroke" fill="none" d="M459.5,1062h2.5v-71l0,0V859h2v-16h4v-27h-1v-14h-7.5H452v14h-1v27h4v16h2v132v71H459.5z"/>
         <rect stroke-width="0" x="400" y="800" fill="url(#black-gradient)" width="160" height="201"></rect>
+        
+
         <g id="js-scan">
           <!-- <rect fill="url(#scan-radial-gradient)" stroke-width="0" id="js-scan-image" height="600" width="600" class="h-g" x="158" y="-550" /> -->
           <rect id="js-scan-line" fill="url(#scan-line-gradient)" stroke-width="0" height="3" width="600" x="158" y="50" class="h-g" />  

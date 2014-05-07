@@ -72,6 +72,10 @@
     </pattern>
 
     <mask id="mask2">
+        <text id="js-progress-text" style="fill: white; font-size: 80px; font-family: 'Helvetica Neue'; font-weight: 100;" x="350" y="400">
+          99%
+        </text>
+
         <g id="js-shape" transform="translate(300,100)">
           <path vector-effect="non-scaling-stroke" fill="none" d="M160,43c3.09,0,6-2.91,6-6c0-4.09-2.91-7-6-7c-4.09,0-7,2.91-7,7
             C153,40.09,155.91,43,160,43z"/>

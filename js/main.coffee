@@ -59,7 +59,7 @@ class Main
     it = @
     tween = TweenMax.to { width: 600, x: 158 }, .75,
       width: 0
-      x: 459
+      x: 460
       ease: Power1.easeInOut
       onUpdate: (e)->
         it.scanLine.setAttribute('width', @target.width)

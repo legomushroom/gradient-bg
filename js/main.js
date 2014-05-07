@@ -86,7 +86,7 @@
         x: 158
       }, .75, {
         width: 0,
-        x: 459,
+        x: 460,
         ease: Power1.easeInOut,
         onUpdate: function(e) {
           it.scanLine.setAttribute('width', this.target.width);

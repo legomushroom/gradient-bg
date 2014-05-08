@@ -25,6 +25,7 @@ class Main
     @scan           = @$ '#js-scan'
     @progressText   = @$ '#js-progress-text'
     @progressText2  = @$ '#js-progress-text2'
+    @progressImage  = @$ '#js-progress-image'
 
   animateRainbow:->
     it = @
@@ -83,6 +84,10 @@ class Main
       onComplete:=>
         @hideScanGlow()
         @hideScanLine()
+      onStart:=>
+        @progressText.style.display = 'block'
+        @progressText2.style.display = 'block'
+        @progressImage.style.display = 'block'
 
     tween = TweenMax.to { yImage: 20 }, .5,
       yImage: -240

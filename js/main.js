@@ -30,7 +30,8 @@
       this.scanImage = this.$('#js-scan-image');
       this.scan = this.$('#js-scan');
       this.progressText = this.$('#js-progress-text');
-      return this.progressText2 = this.$('#js-progress-text2');
+      this.progressText2 = this.$('#js-progress-text2');
+      return this.progressImage = this.$('#js-progress-image');
     };
 
     Main.prototype.animateRainbow = function() {
@@ -123,6 +124,13 @@
           return function() {
             _this.hideScanGlow();
             return _this.hideScanLine();
+          };
+        })(this),
+        onStart: (function(_this) {
+          return function() {
+            _this.progressText.style.display = 'block';
+            _this.progressText2.style.display = 'block';
+            return _this.progressImage.style.display = 'block';
           };
         })(this)
       });

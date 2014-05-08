@@ -8,6 +8,11 @@ html
   body
     include assets.svg
 
+    svg.background
+      image(
+        filter="url(#blur)",
+        xlink:href="http://wallpoper.com/images/00/36/66/70/colorful-gaussian_00366670.jpg", x="0", y="0", height="100%", width="100%")
+
     svg(viewBox="0 0 1000 1000").svg
       g(mask="url(#mask2)")
         rect(id="rainbow", x="150", y="0", fill="url(#gradient-pattern)", width="700", height="1000")

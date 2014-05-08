@@ -74,14 +74,14 @@
     <mask id="mask2">
         
 
-        <text id="js-progress-text2" style="fill: white; font-size: 110px; font-family: 'Wire One', sans-serif; font-weight: 100;" x="405" y="400" transform="scale(1, -1) translate(0, -810)" width="50" height="50">
-         99%
+        <text id="js-progress-text2" text-anchor="middle" style="fill: white; font-size: 110px; font-family: 'Wire One', sans-serif; font-weight: 100;" x="455" y="400" transform="scale(1, -1) translate(0, -810)" width="50" height="50">
+         100%
         </text>
 
         <image stroke-width="2" stroke="white" xlink:href="css/i/black-gradient.png" stroke-width="2" x="380" y="350" width="160" height="200"></image>
 
-        <text id="js-progress-text" style="fill: white; font-size: 110px; font-family: 'Wire One', sans-serif; font-weight: 100;" x="405" y="400">
-          99%
+        <text id="js-progress-text" text-anchor="middle" style="fill: white; font-size: 110px; font-family: 'Wire One', sans-serif; font-weight: 100;" x="455" y="400">
+          100%
         </text>
 
 

@@ -28,7 +28,9 @@
       this.glare2 = this.$('#js-glare2');
       this.scanLine = this.$('#js-scan-line');
       this.scanImage = this.$('#js-scan-image');
-      return this.scan = this.$('#js-scan');
+      this.scan = this.$('#js-scan');
+      this.progressText = this.$('#js-progress-text');
+      return this.progressText2 = this.$('#js-progress-text2');
     };
 
     Main.prototype.animateRainbow = function() {
@@ -104,12 +106,18 @@
       var it, tween;
       it = this;
       tween = TweenMax.to({
-        y: 0
+        y: 0,
+        p: 0
       }, 3, {
         y: 900,
+        p: 100,
         ease: Power1.easeInOut,
         onUpdate: function(e) {
-          return it.scan.setAttribute('transform', "translate(0, " + this.target.y + ")");
+          var progress;
+          it.scan.setAttribute('transform', "translate(0, " + this.target.y + ")");
+          progress = parseInt(this.target.p, 10);
+          it.progressText.innerHTML = "" + progress + "%";
+          return it.progressText2.innerHTML = "" + progress + "%";
         },
         onComplete: (function(_this) {
           return function() {

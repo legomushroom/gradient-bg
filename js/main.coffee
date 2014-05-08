@@ -14,15 +14,17 @@ class Main
 
   vars:->
     @currentProgress = 2000
-    @rainbow      = @$ '#gradient-pattern'
-    @mask         = @$ '#mask2'
-    @shape        = @$ '#js-shape'
-    @charger      = @$ '#js-charger'
-    @glare        = @$ '#js-glare'
-    @glare2       = @$ '#js-glare2'
-    @scanLine     = @$ '#js-scan-line'
-    @scanImage    = @$ '#js-scan-image'
-    @scan         = @$ '#js-scan'
+    @rainbow        = @$ '#gradient-pattern'
+    @mask           = @$ '#mask2'
+    @shape          = @$ '#js-shape'
+    @charger        = @$ '#js-charger'
+    @glare          = @$ '#js-glare'
+    @glare2         = @$ '#js-glare2'
+    @scanLine       = @$ '#js-scan-line'
+    @scanImage      = @$ '#js-scan-image'
+    @scan           = @$ '#js-scan'
+    @progressText   = @$ '#js-progress-text'
+    @progressText2  = @$ '#js-progress-text2'
 
   animateRainbow:->
     it = @
@@ -69,11 +71,15 @@ class Main
         
   animateScan:->
     it = @
-    tween = TweenMax.to { y: 0 }, 3,
+    tween = TweenMax.to { y: 0, p: 0 }, 3,
       y: 900
+      p: 100
       ease: Power1.easeInOut
       onUpdate: (e)->
         it.scan.setAttribute('transform', "translate(0, #{@target.y})")
+        progress = parseInt @target.p, 10
+        it.progressText.innerHTML   = "#{progress}%"
+        it.progressText2.innerHTML  = "#{progress}%"
       onComplete:=>
         @hideScanGlow()
         @hideScanLine()

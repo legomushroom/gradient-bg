@@ -39,7 +39,7 @@
       it = this;
       return tween = TweenMax.to({
         deg: 180
-      }, 20, {
+      }, 10, {
         deg: 540,
         repeat: -1,
         ease: Linear.easeNone,

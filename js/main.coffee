@@ -29,7 +29,7 @@ class Main
 
   animateRainbow:->
     it = @
-    tween = TweenMax.to { deg: 180 }, 20,
+    tween = TweenMax.to { deg: 180 }, 10,
       deg: 540
       repeat: -1
       # yoyo: true
